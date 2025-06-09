@@ -1,0 +1,24 @@
+
+# Maven
+/target
+
+# TestNG
+/test-output
+
+# Allure
+/allure-results
+/allure-report
+
+# IDE
+.idea
+*.iml
+
+# Log files
+logs
+
+# Temporary files
+*.log
+*.lock
+
+# System files
+.DS_Store
