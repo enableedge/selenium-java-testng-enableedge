@@ -2,19 +2,19 @@ package com.enableedge.automation.ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage extends BasePage {
     private static final String SIGNUP_URL = "https://www.automationexercise.com/signup";
 
-    private By nameField = By.cssSelector("input[name='name']");
-    private By emailField = By.cssSelector("input[name='email']");
-    private By signUpButton = By.cssSelector("button[type='submit']");
-    private By signUpSuccess = By.cssSelector(".signup-form h2");
-    private By errorMessage = By.cssSelector(".signup-form .alert-danger");
-    private By signUpForm = By.cssSelector(".signup-form");
+    private final By nameField = By.cssSelector("input[name='name']");
+    private final By emailField = By.cssSelector("input[name='email']");
+    private final By errorMessage = By.cssSelector(".signup-form p[style*='red']");
+    private final By signUpForm = By.cssSelector(".signup-form");
+    private final By emailSignUpField = By.cssSelector("input[data-qa='signup-email']");
+    private final By signUpBtn = By.cssSelector("button[data-qa='signup-button']");
+    private final By verifyDetailsPage = By.cssSelector("div[class='login-form']");
 
     public SignUpPage(WebDriver driver) {
         super(driver);
@@ -33,13 +33,18 @@ public class SignUpPage extends BasePage {
         driver.findElement(emailField).sendKeys(email);
     }
 
+    public void enterSignUpEmail(String email) {
+        driver.findElement(emailSignUpField).sendKeys(email);
+    }
+
     public void clickSignUpButton() {
-        driver.findElement(signUpButton).click();
+        driver.findElement(signUpBtn).click();
     }
 
     public boolean isSignUpSuccessDisplayed() {
         try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(signUpSuccess)).isDisplayed();
+            // return wait.until(ExpectedConditions.visibilityOfElementLocated(signUpSuccess)).isDisplayed();
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(verifyDetailsPage)).isDisplayed();
         } catch (Exception e) {
             return false;
         }
@@ -60,4 +65,9 @@ public class SignUpPage extends BasePage {
             return false;
         }
     }
+
+    public void verifyCredentialsPage() {
+        driver.findElement(verifyDetailsPage);
+    }
 }
+

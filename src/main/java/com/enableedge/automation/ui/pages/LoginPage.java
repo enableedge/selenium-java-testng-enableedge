@@ -2,25 +2,30 @@ package com.enableedge.automation.ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
+
     private static final String LOGIN_URL = "https://www.automationexercise.com/login";
 
     private WebDriverWait wait;
 
-    private By emailInput = By.cssSelector("input[data-qa='login-email']");
-    private By passwordInput = By.cssSelector("input[data-qa='login-password']");
-    private By loginButton = By.cssSelector("button[data-qa='login-button']");
-    private By loginForm = By.cssSelector(".login-form");
-    private By errorMessage = By.cssSelector(".login-form > p");
+    private final By emailInput = By.cssSelector("input[data-qa='login-email']");
+    private final By passwordInput = By.cssSelector("input[data-qa='login-password']");
+    private final By loginButton = By.cssSelector("button[data-qa='login-button']");
+    private final By loginForm = By.cssSelector(".login-form");
+    private final By errorMessage = By.cssSelector(".login-form p[style*='red']");
+    private final By logOut = By.cssSelector("a[href='/logout']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
         this.wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
+    }
+
+    public LoginPage(WebDriverWait wait, WebDriver driver) {
+        super(driver);
+        this.wait = wait;
     }
 
     public void navigateToLoginPage() {
@@ -60,5 +65,9 @@ public class LoginPage extends BasePage {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void clickLogOut() {
+        driver.findElement(logOut).click();
     }
 }
