@@ -1,7 +1,6 @@
 package com.enableedge.automation.utils;
 
 import java.util.Random;
-import java.util.UUID;
 
 public class TestDataGenerator {
     private static final Random random = new Random();

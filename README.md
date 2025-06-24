@@ -40,14 +40,14 @@ This framework is designed to automate both UI and API testing for the Automatio
 
 ## Prerequisites
 
-- Java 17 or higher
+- Java 21 or higher
 - Maven 3.8.0 or higher
 - ChromeDriver (for Chrome browser)
 - Microsoft Edge Driver (for Edge browser)
 
 ## Setup Instructions
 
-1. Install Java 17 or higher
+1. Install Java 21 or higher
 2. Install Maven 3.8.0 or higher
 3. Clone this repository
 4. Install required browser drivers:
@@ -70,7 +70,8 @@ To run tests with specific browser:
 ```bash
 mvn test -Dtest=LoginTest -Dbrowser=chrome
 ```
-![selenium-recording](./docs/selenium-java_recording.gif)
+[![Demo Video](https://img.youtube.com/vi/gs-71gOd-c4/0.jpg)](https://youtu.be/gs-71gOd-c4)
+
 ## Test Data
 
 Test data is configured in `src/main/resources/testdata.properties`. The file contains:
@@ -86,7 +87,7 @@ To view Allure reports:
 ```bash
 allure serve target/allure-results
 ```
-![allure-report](./docs/allure-report-se.png)
+
 ## Logging
 
 The framework uses Log4j2 for logging. Log files are generated in `logs` directory with the following levels:
