@@ -70,7 +70,8 @@ To run tests with specific browser:
 ```bash
 mvn test -Dtest=LoginTest -Dbrowser=chrome
 ```
-[![Demo Video](https://img.youtube.com/vi/gs-71gOd-c4?si=Fpuh37Ckci0DgrwK/0.jpg)](https://youtube.com/gs-71gOd-c4?si=Fpuh37Ckci0DgrwK)
+[![Demo Video](https://img.youtube.com/vi/gs-71gOd-c4/0.jpg)](https://youtu.be/gs-71gOd-c4)
+
 ## Test Data
 
 Test data is configured in `src/main/resources/testdata.properties`. The file contains:
