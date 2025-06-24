@@ -70,7 +70,7 @@ To run tests with specific browser:
 ```bash
 mvn test -Dtest=LoginTest -Dbrowser=chrome
 ```
-![selenium-recording](https://youtu.be/gs-71gOd-c4?si=PxGAMO2XyfgttU7s)
+[![Demo Video](https://img.youtube.com/vi/gs-71gOd-c4?si=Fpuh37Ckci0DgrwK/0.jpg)](https://youtube.com/gs-71gOd-c4?si=Fpuh37Ckci0DgrwK)
 ## Test Data
 
 Test data is configured in `src/main/resources/testdata.properties`. The file contains:
@@ -86,7 +86,7 @@ To view Allure reports:
 ```bash
 allure serve target/allure-results
 ```
-![allure-report](./docs/allure-report-se.png)
+
 ## Logging
 
 The framework uses Log4j2 for logging. Log files are generated in `logs` directory with the following levels:
