@@ -13,6 +13,8 @@ public class HomePage extends BasePage {
     //private By signUpLink = By.cssSelector("a[href='/signup']");
     private By signUpForm = By.cssSelector(".signup-form");
 
+    private By productLink = By.cssSelector("a[href='/products']");
+    
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -45,6 +47,9 @@ public class HomePage extends BasePage {
         } catch (Exception e) {
             return false;
         }
+    }
+    public void clickProducts() {
+    	driver.findElement(productLink).click();
     }
     
 }

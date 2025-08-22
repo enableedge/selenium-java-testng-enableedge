@@ -6,7 +6,8 @@
     <test name="UI Tests">
         <classes>
             <!-- <class name="com.enableedge.automation.ui.tests.LoginTest"/> -->
-            <class name="com.enableedge.automation.ui.tests.SignUpTest"/>
+            <!-- <class name="com.enableedge.automation.ui.tests.SignUpTest"/> -->
+            <class name="com.enableedge.automation.ui.tests.OrderTest"/>
         </classes>
     </test>
     <!-- <test name="API Tests">
