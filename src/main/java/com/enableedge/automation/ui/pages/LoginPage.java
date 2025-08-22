@@ -2,8 +2,7 @@ package com.enableedge.automation.ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,6 +16,7 @@ public class LoginPage extends BasePage {
     private By loginButton = By.cssSelector("button[data-qa='login-button']");
     private By loginForm = By.cssSelector(".login-form");
     private By errorMessage = By.cssSelector(".login-form > p");
+    private By logOut = By.cssSelector("a[href='/logout']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -60,5 +60,9 @@ public class LoginPage extends BasePage {
         } catch (Exception e) {
             return false;
         }
+    }
+    public void clickLogOut() {
+        //driver.findElement(logOut).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logOut)).click();
     }
 }

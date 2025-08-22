@@ -11,7 +11,7 @@ public class ElementUtils {
     private static WebDriver driver;
 
     public ElementUtils(WebDriver driver) {
-        this.driver = driver;
+        ElementUtils.driver = driver;
     }
 
     public WebElement waitForElement(By locator, Duration timeout) {

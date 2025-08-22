@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation Exercise Test Suite" parallel="tests" thread-count="2">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Exercise Test Suite" parallel="tests" thread-count="1">
     <parameter name="browser" value="chrome"/>
     
     <test name="UI Tests">
         <classes>
-            <class name="com.enableedge.automation.ui.tests.LoginTest"/>
-            <!-- <class name="com.enableedge.automation.ui.tests.SignUpTest"/> -->
+            <!-- <class name="com.enableedge.automation.ui.tests.LoginTest"/> -->
+            <class name="com.enableedge.automation.ui.tests.SignUpTest"/>
         </classes>
     </test>
     <!-- <test name="API Tests">

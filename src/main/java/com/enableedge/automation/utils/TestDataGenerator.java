@@ -1,13 +1,27 @@
 package com.enableedge.automation.utils;
 
 import java.util.Random;
-import java.util.UUID;
+//import java.util.UUID;
 
 public class TestDataGenerator {
     private static final Random random = new Random();
 
     public static String getRandomEmail() {
-        return "test" + System.currentTimeMillis() + "@example.com";
+        //return "test" + System.currentTimeMillis() + "@example.com";
+    	String chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+
+        // generate random 8-character username
+        for (int i = 0; i < 8; i++) {
+            sb.append(chars.charAt(random.nextInt(chars.length())));
+        }
+
+        // append domain
+        sb.append("@example.com");
+
+        return sb.toString();
+        
     }
 
     public static String getRandomPassword() {

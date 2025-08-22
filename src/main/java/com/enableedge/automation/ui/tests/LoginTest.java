@@ -37,11 +37,12 @@ public class LoginTest extends TestBase {
         
         CustomLogger.info("Verifying successful login");
         assertTrue(homePage.isLoggedIn(), "User not logged in after valid credentials");
+        loginPage.clickLogOut();
     }
 
     @Test(priority = 2)
     public void testLoginWithInvalidEmail() {
-        String email = "invalid-email";
+        String email = "invalid@test.com";
         String password = TestDataManager.getTestData("valid.password");
         
         CustomLogger.info("Starting login test with invalid email: " + email);
@@ -56,10 +57,15 @@ public class LoginTest extends TestBase {
     }
 
     @Test(priority = 3)
-    public void testLoginFormNavigation() {
+    public void testLoginFormNavigation() throws InterruptedException {
+    	
         homePage.navigateToHomePage();
+        Thread.sleep(2000);
         homePage.clickLoginLink();
         
+        
         assertTrue(loginPage.isLoginFormDisplayed(), "Login form should be displayed");
+        CustomLogger.info("Closing browser");
+        driver.quit();
     }
 }
